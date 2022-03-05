@@ -1,0 +1,40 @@
+name:                Elizabeth Kuzsma
+title:               Elizabeth Kuzsma for Amherst, NH Souhegan Cooperative School Board, 2022
+url:                 https://elizabeth-kuzsma-amherst-nh-souhegan-school-board-2022.netlify.app/
+enforce_ssl:         elizabeth-kuzsma-amherst-nh-souhegan-school-board-2022.netlify.app/
+baseurl:             ""
+include:             ['_pages']
+author:              Elizabeth Kuzsma
+
+permalink:           /blog/:slug
+relative_permalinks: false
+
+plugins:
+  - jekyll-redirect-from
+  - jekyll-last-modified-at
+
+sass:
+  sass_dir:          _sass
+  style:            :compressed
+
+collections:
+  notes:
+    output: true
+    permalink: /notes/:path
+  bookshelf:
+    output: true
+    permalink: /bookshelf/:path
+
+defaults:
+  - scope:
+      path: "**/*"
+    values:
+      layout: "default"
+  - scope:
+      path: "_notes/**/*.md"
+    values:
+      layout: "note"
+  - scope:
+      path: "_bookshelf/**/*.md"
+    values:
+      layout: "bookshelf"
